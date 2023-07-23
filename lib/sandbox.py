@@ -1,5 +1,17 @@
 import sys
 import resource
+import pkgutil
+
+def get_installed_packages():
+    installed_packages = []
+    for _, name, _ in pkgutil.iter_modules():
+        installed_packages.append(name)
+    return installed_packages
+
+installed_packages = get_installed_packages()
+for package in installed_packages:
+    print(package)
+
 import pyseccomp as seccomp
 
 

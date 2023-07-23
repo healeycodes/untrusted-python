@@ -12,7 +12,7 @@ def call_sandbox():
 def exec():
     code = request.get_json()["code"]
     proc = subprocess.Popen(
-        ["python", "./lib/sandbox.py", code],
+        ["python3", "./lib/sandbox.py", code],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
