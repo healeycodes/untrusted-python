@@ -8,19 +8,17 @@ def call_sandbox():
     pass
 
 
-@app.route("/api/exec", methods=['POST'])
+@app.route("/api/exec", methods=["POST"])
 def exec():
-    code = request.get_json()['code']
-    proc = subprocess.Popen(["ls", "-a"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    code = request.get_json()["code"]
+    proc = subprocess.Popen(
+        ["python3", "./lib/sandbox.py", code],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
     try:
         out, err = proc.communicate(code, timeout=2)
     except subprocess.TimeoutExpired:
         proc.kill()
         out, err = proc.communicate()
-    print(out, err)
-    return f'''
-(stdout)
-{out}
-(stderr)
-{err}
-'''
+    return f"{out.decode()}\n{err.decode()}"

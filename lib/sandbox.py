@@ -35,7 +35,7 @@ def set_mem_limit():
 
 
 if __name__ == "__main__":
-    code = sys.stdin.read()
+    code = sys.argv[1]
     set_mem_limit()
     drop_perms()
     exec(code)
