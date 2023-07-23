@@ -4,6 +4,10 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
+def call_sandbox():
+    pass
+
+
 @app.route("/api/exec", methods=['POST'])
 def exec():
     code = request.get_json()['code']
@@ -13,11 +17,10 @@ def exec():
     except subprocess.TimeoutExpired:
         proc.kill()
         out, err = proc.communicate()
+    print(out, err)
     return f'''
 (stdout)
 {out}
 (stderr)
 {err}
-(code)
-{code}
 '''
