@@ -1,1 +1,1 @@
-yum install libseccomp-dev -y
+yum install libseccomp-devel -y
