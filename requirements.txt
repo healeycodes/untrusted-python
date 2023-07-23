@@ -1,0 +1,2 @@
+pyseccomp==0.1.2
+Flask==2.3.2
