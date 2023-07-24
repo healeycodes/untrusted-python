@@ -23,9 +23,12 @@ def exec():
             "PATH": os.environ.get("PATH"),
         }
     )
+    
+    timeout = False
     try:
         out, err = proc.communicate(code, timeout=2)
     except subprocess.TimeoutExpired:
+        timeout = True
         proc.kill()
         out, err = proc.communicate()
-    return f"{out.decode()}\n{err.decode()}"
+    return f"{out.decode()}\n{err.decode()}\n{'process timed out (you get ~2sec of wallclock time)' if timeout else ''}"
