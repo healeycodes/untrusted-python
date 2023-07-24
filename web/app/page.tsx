@@ -5,7 +5,7 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 const API = process.env.API
 
 export default function Home() {
-  const [code, setCode] = useState(`# hint: use cmd + enter to submit\nimport random\n\nprint(f"Hello, World!")\nprint(random.randint(0, 1000))`);
+  const [code, setCode] = useState(`# hint: use cmd + enter to submit\nimport time\n\nprint(f"Hello, World!")\nprint(time.time())`);
   const [loading, setLoading] = useState(false)
   const [output, setOutput] = useState(``);
   useEffect(() => {
