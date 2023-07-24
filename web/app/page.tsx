@@ -88,7 +88,7 @@ export default function Home() {
                     }}
                   />
                 </div>
-                <p className="mt-3 text-sm leading-6 text-gray-600">Anything you write here is passed to an <a className="text-sky-600" href="https://docs.python.org/3/library/functions.html#exec">exec</a> call on the server. The stdout will be displayed below.</p>
+                <p className="mt-3 text-sm leading-6 text-gray-600">The above code is passed to an <a className="text-sky-600" href="https://docs.python.org/3/library/functions.html#exec">exec</a> call on the server – stdout/stderr will be displayed below.</p>
               </div>
 
               <div className="col-span-full gap-x-6">
