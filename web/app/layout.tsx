@@ -6,7 +6,7 @@ const noto = Noto_Sans({ weight: "400", subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'isolated-python',
-  description: 'An example of how to run untrusted Python code.',
+  description: 'Run some untrusted Python code.',
 }
 
 export default function RootLayout({
