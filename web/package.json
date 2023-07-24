@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "flask-dev": "FLASK_DEBUG=1 pip3 install -r requirements.txt && python3 -m flask --app api/index run -p 5328",
-    "next-dev": "next dev",
-    "build": "./install.sh && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
