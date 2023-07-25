@@ -5,7 +5,7 @@ import { Noto_Sans } from 'next/font/google'
 const noto = Noto_Sans({ weight: "400", subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'isolated-python',
+  title: 'untrusted-python',
   description: 'Run some untrusted Python code.',
 }
 
