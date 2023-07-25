@@ -1,7 +1,8 @@
 import os
+import sys
 import subprocess
-from flask import Flask, request
 from flask_cors import CORS
+from flask import Flask, request
 
 app = Flask(__name__)
 CORS(app)
@@ -16,14 +17,14 @@ def ping():
 def exec():
     code = request.get_json()["code"]
     proc = subprocess.Popen(
-        ["python3", "./sandbox.py", code],
+        [sys.executable, "./sandbox.py", code],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         env={
             "PATH": os.environ.get("PATH"),
         }
     )
-    
+
     timeout = False
     try:
         out, err = proc.communicate(code, timeout=2)
