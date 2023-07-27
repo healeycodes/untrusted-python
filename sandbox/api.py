@@ -25,11 +25,11 @@ def exec():
         }
     )
 
-    timeout = False
+    extra = ""
     try:
-        out, err = proc.communicate(code, timeout=2)
+        stdout, stderr = proc.communicate(code, timeout=2)
     except subprocess.TimeoutExpired:
-        timeout = True
+        extra = "process timed out"
         proc.kill()
-        out, err = proc.communicate()
-    return f"{out.decode()}\n{err.decode()}\n{'process timed out (you get ~2sec of wallclock time)' if timeout else ''}"
+        stdout, stderr = proc.communicate()
+    return f"{stdout.decode()}\n{stderr.decode()}\n{extra}"

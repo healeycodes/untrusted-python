@@ -10,6 +10,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
-ENV FLASK_APP=api.py
+ENV GUNICORN_CMD="gunicorn -w 4 -b 0.0.0.0:3000"
 EXPOSE 3000
-CMD ["flask", "run", "--host", "0.0.0.0", "--port", "3000"]
+CMD ["/bin/bash", "-c", "$GUNICORN_CMD api:app"]
