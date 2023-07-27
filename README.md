@@ -1,5 +1,5 @@
 ## 📦 untrusted-python
-> My blog post: [Running Untrusted Python](https://healeycodes.com/running-untrusted-python)
+> My blog post: [Running Untrusted Python Code](https://healeycodes.com/running-untrusted-python-code)
 
 <br>
 
