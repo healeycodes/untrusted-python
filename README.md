@@ -20,7 +20,7 @@ fly launch
 
 Follow the instructions in your terminal. Make a note of the URL.
 
-It will look like `https://foo.fly.dev`. Copy it (without the trailing slash), and add it to `web/.env`.
+It will look like `https://foo.fly.dev`. Copy it (without a trailing slash!), and add it to `web/.env`.
 
 #### Next.js frontend
 
