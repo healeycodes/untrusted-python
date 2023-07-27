@@ -63,7 +63,7 @@ export default function Home() {
               <p className="mt-1 text-sm leading-6 text-gray-600">
                 Run some untrusted Python code here!
                 <br/>
-                Read my <a className="text-sky-600" href="https://healeycodes.com/running-untrusted-python">blog post</a> about how this works.
+                Read my <a className="text-sky-600" href="https://healeycodes.com/running-untrusted-python-code">blog post</a> about how this works.
                 <br/>
                 Or view the <a className="text-sky-600" href="https://github.com/healeycodes/untrusted-python">source code</a>.
               </p>
