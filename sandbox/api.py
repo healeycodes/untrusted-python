@@ -41,7 +41,6 @@ def exec():
         AXIOM_KEY = os.environ.get("AXIOM_KEY")
         AXIOM_DATASET = os.environ.get("AXIOM_DATASET")
         if not AXIOM_KEY or not AXIOM_DATASET:
-            print('missing logging env vars')
             return
         requests.post(
             f"https://api.axiom.co/v1/datasets/{AXIOM_DATASET}/ingest",
