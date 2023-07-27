@@ -38,14 +38,15 @@ def exec():
 
     @response.call_on_close
     def on_close():
-        API_KEY = os.environ.get("AXIOM_KEY")
-        API_DATASET = os.environ.get("AXIOM_DATASET")
-        if not API_KEY or not API_DATASET:
+        AXIOM_KEY = os.environ.get("AXIOM_KEY")
+        AXIOM_DATASET = os.environ.get("AXIOM_DATASET")
+        if not AXIOM_KEY or not AXIOM_DATASET:
+            print('missing logging env vars')
             return
         requests.post(
-            f"https://api.axiom.co/v1/datasets/{API_DATASET}/ingest",
+            f"https://api.axiom.co/v1/datasets/{AXIOM_DATASET}/ingest",
             headers={
-                "Authorization": f"Bearer {API_KEY}",
+                "Authorization": f"Bearer {AXIOM_KEY}",
                 "Content-Type": "application/json",
             },
             json=[
