@@ -18,7 +18,7 @@ cd sandbox
 fly launch
 ```
 
-Follow the instructions in your terminal. Make a note of the URL – it will look like `https://foo.fly.dev`. Copy it (without a trailing slash!), and add it to `web/.env` as `API`.
+Follow the instructions in your terminal. Make a note of the URL – it will look like `https://foo.fly.dev`. Copy it (without a trailing slash), and add it to `web/.env` as `API`.
 
 #### Next.js frontend
 
@@ -33,4 +33,4 @@ Follow the instructions in your terminal.
 
 `web` is a Next.js app that you can deploy to Vercel. Set the root directory of the project to `web`.
 
-`sandbox` is a Fly.io app that has `fly.toml` file ready to use. Add the Fly.io URL as a Vercel environment variable as `API`.
+`sandbox` is a Fly.io app that has `fly.toml` file ready to use. Add the Fly.io URL as a Vercel environment variable as `API` (without a trailing slash).
