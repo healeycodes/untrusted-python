@@ -1,3 +1,32 @@
-## untrusted-python
+## 📦 untrusted-python
+> My blog post: [Running Untrusted Python](https://healeycodes.com/running-untrusted-python)
 
-TODO README
+<br>
+
+This is a sandbox for running untrusted Python code. Until it's been auditted by someone with some kind of security authority, you should consider it to be insecure.
+
+With that in mind, I welcome any bug reports, sandbox escapes, etc. – please raise an issue or email/DM me.
+
+### Development
+
+#### Fly.io backend
+
+Install [flyctl](https://fly.io/docs/hands-on/install-flyctl/).
+
+```bash
+cd sandbox
+fly launch
+```
+
+Follow the instructions in your terminal. Make a note of the URL.
+
+It will look like `https://foo.fly.dev`. Copy it (without the trailing slash), and add it to `web/.env`.
+
+#### Next.js frontend
+
+```bash
+npm i
+npm run dev
+```
+
+Follow the instructions in your terminal.
