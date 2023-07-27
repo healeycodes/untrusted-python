@@ -3,7 +3,7 @@
 
 <br>
 
-This is a sandbox for running untrusted Python code. Until it's been auditted by someone with some kind of security authority, you should consider it to be insecure.
+This is a sandbox for running untrusted Python code. Until it's been audited by someone with some kind of security authority, you should consider it to be insecure.
 
 With that in mind, I welcome any bug reports, sandbox escapes, etc. – please raise an issue or email/DM me.
 
