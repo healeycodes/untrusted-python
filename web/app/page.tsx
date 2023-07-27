@@ -61,9 +61,11 @@ export default function Home() {
             <div>
               <h2 className="text-base font-semibold leading-7 text-gray-900">untrusted-python</h2>
               <p className="mt-1 text-sm leading-6 text-gray-600">
-                Run some untrusted Python code.
+                Run some untrusted Python code here!
                 <br/>
-                Will open source this soon!
+                Read my <a className="text-sky-600" href="https://healeycodes.com/running-untrusted-python">blog post</a> about how this works.
+                <br/>
+                Or view the <a className="text-sky-600" href="https://github.com/healeycodes/untrusted-python">source code</a>.
               </p>
             </div>
 

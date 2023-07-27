@@ -1,8 +1,9 @@
 import os
 import sys
+import requests
 import subprocess
 from flask_cors import CORS
-from flask import Flask, request
+from flask import Flask, request, Response
 
 app = Flask(__name__)
 CORS(app)
@@ -22,7 +23,7 @@ def exec():
         stderr=subprocess.PIPE,
         env={
             "PATH": os.environ.get("PATH"),
-        }
+        },
     )
 
     extra = ""
@@ -32,4 +33,30 @@ def exec():
         extra = "process timed out"
         proc.kill()
         stdout, stderr = proc.communicate()
-    return f"{stdout.decode()}\n{stderr.decode()}\n{extra}"
+
+    response = Response(f"{stdout.decode()}\n{stderr.decode()}\n{extra}")
+
+    @response.call_on_close
+    def on_close():
+        API_KEY = os.environ.get("AXIOM_KEY")
+        API_DATASET = os.environ.get("AXIOM_DATASET")
+        if not API_KEY or not API_DATASET:
+            return
+        requests.post(
+            f"https://api.axiom.co/v1/datasets/{API_DATASET}/ingest",
+            headers={
+                "Authorization": f"Bearer {API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json=[
+                {
+                    "data": {
+                        "code": code,
+                        "stdout": stdout.decode(),
+                        "stderr": stderr.decode(),
+                    },
+                },
+            ],
+        ),
+
+    return response
