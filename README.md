@@ -7,6 +7,8 @@ This is a sandbox for running untrusted Python code. Until it's been audited by 
 
 With that in mind, I welcome any bug reports, sandbox escapes, etc. – please raise an issue or email/DM me.
 
+You can try and break out of it here: https://untrusted-python.vercel.app
+
 ### Development
 
 #### Fly.io backend
